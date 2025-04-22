@@ -108,37 +108,60 @@ bool test_is_vowel() {
 /* Task 4.1 */
 
 bool test_is_tail() {
-  // TODO: Implementar esta funcion
+  if (!assert_true("is_tail('w')", is_tail('w'))) return false;
+  if (!assert_true("is_tail('a')", is_tail('a'))) return false;
+  if (!assert_true("is_tail('s')", is_tail('s'))) return false;
+  if (!assert_true("is_tail('d')", is_tail('d'))) return false;
+  if (!assert_false("is_tail('x')", is_tail('x'))) return false;
   return true;
 }
 
 bool test_is_head() {
-  // TODO: Implementar esta funcion
+  if (!assert_true("is_head('W')", is_head('W'))) return false;
+  if (!assert_true("is_head('A')", is_head('A'))) return false;
+  if (!assert_true("is_head('S')", is_head('S'))) return false;
+  if (!assert_true("is_head('D')", is_head('D'))) return false;
+  if (!assert_true("is_head('x')", is_head('x'))) return false;
+  if (!assert_false("is_head('v')", is_head('v'))) return false;
   return true;
 }
 
 bool test_is_snake() {
-  // TODO: Implementar esta funcion
+  if (!assert_true("is_snake('^')", is_snake('^'))) return false;
+  if (!assert_true("is_snake('<')", is_snake('<'))) return false;
+  if (!assert_true("is_snake('v')", is_snake('v'))) return false;
+  if (!assert_true("is_snake('>')", is_snake('>'))) return false;
+  if (!assert_false("is_snake(' ')", is_snake(' '))) return false;
   return true;
 }
 
 bool test_body_to_tail() {
-  // TODO: Implementar esta funcion
+  if (!assert_equals_char("body_to_tail('^')", 'w', body_to_tail('^'))) return false;
+  if (!assert_equals_char("body_to_tail('<')", 'a', body_to_tail('<'))) return false;
+  if (!assert_equals_char("body_to_tail('v')", 's', body_to_tail('v'))) return false;
+  if (!assert_equals_char("body_to_tail('>')", 'd', body_to_tail('>'))) return false;
   return true;
 }
 
 bool test_head_to_body() {
-  // TODO: Implement this function.
+  if (!assert_equals_char("head_to_body('W')", '^', head_to_body('W'))) return false;
+  if (!assert_equals_char("head_to_body('A')", '<', head_to_body('A'))) return false;
+  if (!assert_equals_char("head_to_body('S')", 'v', head_to_body('S'))) return false;
+  if (!assert_equals_char("head_to_body('D')", '>', head_to_body('D'))) return false;
   return true;
 }
 
 bool test_get_next_row() {
-  // TODO: Implement this function.
+  if (!assert_equals_unsigned_int("get_next_row up", 0, get_next_row(1, 'W'))) return false;
+  if (!assert_equals_unsigned_int("get_next_row down", 2, get_next_row(1, 'v'))) return false;
+  if (!assert_equals_unsigned_int("get_next_row none", 3, get_next_row(3, '<'))) return false;
   return true;
 }
 
 bool test_get_next_col() {
-  // TODO: Implementar esta funcion
+  if (!assert_equals_unsigned_int("get_next_col left", 1, get_next_col(2, 'a'))) return false;
+  if (!assert_equals_unsigned_int("get_next_col right", 4, get_next_col(3, 'D'))) return false;
+  if (!assert_equals_unsigned_int("get_next_col none", 5, get_next_col(5, 'w'))) return false;
   return true;
 }
 
